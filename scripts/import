@@ -39,7 +39,6 @@ airports.each do |airport|
     city: city,
     country: country,
     iata_code: iata_code,
-    icao_code: icao_code,
     _geoloc: {
       lat: lat,
       lng: lng
@@ -70,7 +69,7 @@ index.set_settings(attributesToIndex: %w(country city name iata_code),
                    removeWordsIfNoResults: 'allOptional',
                    typoTolerance: 'min')
 records.each_slice(1000) do |batch|
-  index.add_objects(batch)
+  index.add_objects!(batch)
 end
 Algolia.move_index(INDEX_TMP, INDEX)
 puts "#{records.size} records pushed!"
