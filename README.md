@@ -1,7 +1,10 @@
-Geo-Search Demo
-====================
+# Geo-Search Demo
 
-This is a sample project implementing an geo-search based website with Google Maps and [Algolia](http://www.algolia.com). Algolia is a Search API that provides hosted full-text, numerical and faceted search.
+This is a sample project implementing a geo-search based website with Google
+Maps and [Algolia](http://www.algolia.com).
+
+[![Geo search](geo-search.gif)](http://demos.algolia.com/geo-search-demo/)
+You can also try the [live demo](http://demos.algolia.com/geo-search-demo/)
 
 ## Features
 * Full JavaScript (based on [jQuery](http://jquery.com/), [Hogan.js](http://twitter.github.io/hogan.js/), [Google Maps](https://developers.google.com/maps) and [AlgoliaSearch](https://github.com/algolia/algoliasearch-client-js) + [helper](https://github.com/algolia/algoliasearch-helper-js))
@@ -13,8 +16,9 @@ This is a sample project implementing an geo-search based website with Google Ma
 
 ## Usage
 
-We've included some credentials in the code allowing you to test the demo without any Algolia account. If you want to replicate this demo using your own Algolia credentials, you can use the `import.rb` script to send the data and configure the indices.
+We've included some credentials in the code allowing you to test the demo without any Algolia account. If you want to replicate this demo using your own Algolia credentials, you can use the `npm run import` script to send the data and configure the indices. You can also have a look at the data sent to the index by looking at the [./data/record.json](https://github.com/algolia/demo-geo-search/blob/master/data/records.json) file.
 
+Usage: 
 ```
 bundle install
 npm run import YourApplicationID YourAPIKey YourIndexName
@@ -28,13 +32,15 @@ Then, you'll need to replace the demo credentials with your own:
 
 ## Tutorial
 
-**Follow this [tutorial](https://www.algolia.com/doc/tutorials/geo-search) (on Algolia.com) to learn how this implementation works** and how it has been built using the [Algolia's Javascript API client](https://github.com/algolia/algoliasearch-client-js) and its [helper](https://github.com/algolia/algoliasearch-helper-js).
+**Follow this [tutorial](https://www.algolia.com/doc/tutorials/geo-search) to
+learn how this implementation works** and how it has been built using the
+[Algolia's Javascript API
+client](https://github.com/algolia/algoliasearch-client-js) and its
+[helper](https://github.com/algolia/algoliasearch-helper-js).
 
-## Demo
-Try out the [demo](http://demos.algolia.com/geo-search-demo/)
-![Geo search](geo-search.gif)
 
 ## Data Set
+
 We've used a list of 3,282 airports from [OpenFlight.org](http://openflights.org/data.html).
 
 ## Run and develop locally
