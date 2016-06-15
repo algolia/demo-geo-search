@@ -4,7 +4,9 @@ This is a sample project implementing a geo-search based website with Google
 Maps and [Algolia](http://www.algolia.com).
 
 [![Geo search](geo-search.gif)](http://demos.algolia.com/geo-search-demo/)
-You can also try the [live demo](http://demos.algolia.com/geo-search-demo/)
+You can also try the [live demo](http://demos.algolia.com/geo-search-demo/) or
+follow the [in-depth
+guide](https://www.algolia.com/doc/geo-search/geo-search-overview).
 
 ## Features
 * Full JavaScript (based on [jQuery](http://jquery.com/), [Hogan.js](http://twitter.github.io/hogan.js/), [Google Maps](https://developers.google.com/maps) and [AlgoliaSearch](https://github.com/algolia/algoliasearch-client-js) + [helper](https://github.com/algolia/algoliasearch-helper-js))
