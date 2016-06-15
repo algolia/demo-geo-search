@@ -5,7 +5,7 @@ $(document).ready(function () {
   // ==============
   var APPLICATION_ID = 'latency';
   var SEARCH_ONLY_API_KEY = '6be0576ff61c053d5f9a3225e2a90f76';
-  var INDEX_NAME = 'airports';
+  var INDEX_NAME = 'demo-geosearch';
   var PARAMS = {hitsPerPage: 60};
 
   // Client + Helper initialization

@@ -12,7 +12,8 @@
     "url": "https://github.com/algolia/demo-geo-search/issues"
   },
   "scripts": {
-    "dev": "browser-sync start --server ./app --files 'app/*' --no-open"
+    "dev": "browser-sync start --server ./app --files 'app/*' --no-open",
+    "import": "./scripts/import"
   },
   "homepage": "https://www.algolia.com/doc/geo-search/geo-search-overview",
   "devDependencies": {

@@ -16,13 +16,14 @@ This is a sample project implementing an geo-search based website with Google Ma
 We've included some credentials in the code allowing you to test the demo without any Algolia account. If you want to replicate this demo using your own Algolia credentials, you can use the `import.rb` script to send the data and configure the indices.
 
 ```
-./import.rb YourApplicationID YourAPIKey YourIndexName
+bundle install
+npm run import YourApplicationID YourAPIKey YourIndexName
 ```
 
 Then, you'll need to replace the demo credentials with your own:
 - in `js/app.js`, set your own `APPLICATION_ID` instead of `"latency"` (which is our demo `APPLICATION_ID`),
 - in `js/app.js`, set your own `SEARCH_ONLY_API_KEY` instead of `"6be0576ff61c053d5f9a3225e2a90f76"`,
-- in `js/app.js`, set your own `index` name instead of `"instant_search"`.
+- in `js/app.js`, set your own `INDEX_NAME` name instead of `"demo-geosearch"`.
 
 
 ## Tutorial

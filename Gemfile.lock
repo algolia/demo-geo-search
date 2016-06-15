@@ -1,0 +1,20 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    algoliasearch (1.8.1)
+      httpclient (~> 2.7.1)
+      json (>= 1.5.1)
+    awesome_print (1.6.1)
+    httpclient (2.7.2)
+    json (1.8.3)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  algoliasearch (~> 1.8.1)
+  awesome_print (~> 1.6)
+  json (~> 1.8)
+
+BUNDLED WITH
+   1.12.4

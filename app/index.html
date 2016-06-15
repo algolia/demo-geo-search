@@ -60,7 +60,7 @@
   <script type="text/template" id="hits-template">
     {{#hits}}
     <div class="hit">
-      <h3 class="hit-airport-code">{{{ _highlightResult.airport_id.value }}}</h3>
+      <h3 class="hit-airport-code">{{{ _highlightResult.iata_code.value }}}</h3>
       <h2 class="hit-name">{{{ _highlightResult.name.value }}}{{^ displayCity }} - {{{ _highlightResult.city.value }}}{{/displayCity}}</h2>
       <p class="hit-location">{{{ _highlightResult.country.value }}}<span class="hit-distance"> {{ distance }}</span></p>
     </div>

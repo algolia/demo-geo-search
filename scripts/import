@@ -1,0 +1,76 @@
+#!/usr/bin/env ruby
+require 'json'
+require 'algoliasearch'
+require 'awesome_print'
+require 'open-uri'
+require 'net/http'
+
+####
+#### SCRIPT PARAMETERS
+####
+if ARGV.length != 3
+  $stderr << "usage: import.rb APP_ID API_KEY INDEX\n"
+  exit 1
+end
+APP_ID  = ARGV[0]
+API_KEY = ARGV[1]
+INDEX   = ARGV[2]
+INDEX_TMP = "#{INDEX}_tmp"
+
+####
+#### INIT ALGOLIA
+####
+Algolia.init application_id: APP_ID, api_key: API_KEY
+
+####
+#### LOAD DATA
+####
+airports = File.read('./data/airports.dat').split("\n")
+records = {}
+airports.each do |airport|
+  data = airport.split(',').map { |value| value.delete('"') }
+  id, name, city, country, iata_code, icao_code, lat, lng = data
+  lat = lat.to_f
+  lng = lng.to_f
+
+  records[id] = {
+    objectID: id,
+    name: name,
+    city: city,
+    country: country,
+    iata_code: iata_code,
+    icao_code: icao_code,
+    _geoloc: {
+      lat: lat,
+      lng: lng
+    },
+    links_count: 0
+  }
+end
+
+routes = File.read('./data/routes.dat').split("\n")
+routes.each do |route|
+  data = route.split(',').map { |value| value.delete('"') }
+  from_id = data[3]
+  to_id = data[5]
+
+  records[from_id][:links_count] += 1 if records[from_id]
+  records[to_id][:links_count] += 1 if records[to_id]
+end
+
+records = records.values.reject { |r| r[:links_count] == 0 }
+
+####
+#### PUSH TO ALGOLIA
+####
+puts "Pushing #{records.size} records to #{INDEX}"
+index = Algolia::Index.new INDEX_TMP
+index.set_settings(attributesToIndex: %w(country city name iata_code),
+                   customRanking: ['desc(links_count)'],
+                   removeWordsIfNoResults: 'allOptional',
+                   typoTolerance: 'min')
+records.each_slice(1000) do |batch|
+  index.add_objects(batch)
+end
+Algolia.move_index(INDEX_TMP, INDEX)
+puts "#{records.size} records pushed!"
