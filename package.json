@@ -17,6 +17,6 @@
   },
   "homepage": "https://www.algolia.com/doc/geo-search/geo-search-overview",
   "devDependencies": {
-    "browser-sync": "2.8.1"
+    "browser-sync": "^2.18.8"
   }
 }
