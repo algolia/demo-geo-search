@@ -3,10 +3,10 @@
 $(document).ready(function () {
   // INITIALIZATION
   // ==============
-  var APPLICATION_ID = 'latency';
-  var SEARCH_ONLY_API_KEY = '6be0576ff61c053d5f9a3225e2a90f76';
-  var INDEX_NAME = 'demo-geosearch';
-  var PARAMS = {hitsPerPage: 60};
+  var APPLICATION_ID = '03RRWC660B';
+  var SEARCH_ONLY_API_KEY = 'fbd0a83ab82cfdc4c4d22b0145b35d45';
+  var INDEX_NAME = 'articles_tsne';
+  var PARAMS = {hitsPerPage: 1000};
 
   // Client + Helper initialization
   var algolia = algoliasearch(APPLICATION_ID, SEARCH_ONLY_API_KEY);
