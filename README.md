@@ -1,5 +1,7 @@
 # Geo-Search Demo
 
+> **⚠️ Deprecated (2026-08-20)** — This demo was created several years ago using jQuery and the low-level Algolia JS client. Use the [React InstantSearch geo-search demo](https://github.com/algolia/doc-code-samples/tree/master/react-instantsearch/geo-search) instead.
+
 This is a sample project implementing a geo-search based website with Google
 Maps and [Algolia](http://www.algolia.com).
 
@@ -20,7 +22,7 @@ guide](https://www.algolia.com/doc/geo-search/geo-search-overview).
 
 We've included some credentials in the code allowing you to test the demo without any Algolia account. If you want to replicate this demo using your own Algolia credentials, you can use the `npm run import` script to send the data and configure the indices. You can also have a look at the data sent to the index by looking at the [./data/record.json](https://github.com/algolia/demo-geo-search/blob/master/data/records.json) file.
 
-Usage: 
+Usage:
 ```
 bundle install
 npm run import YourApplicationID YourAPIKey YourIndexName
